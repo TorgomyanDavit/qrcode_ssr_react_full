@@ -1,0 +1,79 @@
+.languangeContainer {
+    
+    .rateContainer {
+        height: 446px !important;
+        padding-top: 20px  !important;
+        .rateDescription {
+            max-width: 246px;
+            text-align: center;
+            color: #000000;
+            font-size: 16px;
+            margin-top: 20px;
+            line-height: 21px;
+        }
+
+        .langButtonContainer {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: center!important;
+            margin: 17px 0 23px 0 !important;
+        }
+
+        button {
+            width: fit-content !important;
+            height: fit-content !important;
+            border: none !important;
+            i {
+                &::before { transition: 0.2s }
+                font-size: 25px;
+            }
+            padding-left: 8px !important;
+            padding-bottom: 0 !important;
+            border-radius: 5px !important;
+            padding-left: 0 !important;
+            
+            .starColor {
+                &::before {
+                    color: #ffe600;
+                }
+            }
+        }
+
+        textarea {
+            width: 100% !important;
+            height: 126px !important;
+            border: 1px solid #D9D9D9;
+            font-size: 20px;
+            outline: none;
+            padding-left: 10px;
+            resize: none;
+            padding-top: 10px;
+        }
+
+        .RateFeetback {
+            width: 100% !important;
+            height: 50px !important;
+            color: white;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background: #000000;
+            margin-top: 23px;
+            margin-bottom: 17px;
+        }
+
+        .notNowRateFeetback {
+            text-decoration: underline;
+            color: #000000;
+            text-align: center;
+            background: none;
+            outline: none;
+            border: none;
+            font-size: 16px;
+        }
+    }
+}
+
+.RateMainContainer  {
+    visibility: visible !important;
+}

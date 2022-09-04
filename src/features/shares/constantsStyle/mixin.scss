@@ -1,0 +1,54 @@
+@mixin G_displayFlexAllCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin G_displayFlexAlighnCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin G_displayFlexJustyfyCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin G_displayFlexDirectionRow {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin G_displayFlexDirectionColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin G_displayFlexDirectionColumnAlighnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin buttonBgBorderOutlineNone {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+@mixin globalButton($wit,$het,$fsz,$rad,$bckgr:transparent,$border:transparent) {
+    @include G_displayFlexAllCenter();
+    width: $wit;
+    height: $het;
+    font-size: $fsz;
+    border-radius: $rad;
+    border: $border;
+    background: $bckgr;
+    outline: none;
+}
+
+
+
+
+
+

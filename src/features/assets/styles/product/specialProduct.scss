@@ -1,0 +1,431 @@
+
+
+@mixin SpecialProductMain {
+    .specialProductMain {
+        cursor: pointer;
+        display: flex;
+        // flex-direction: column;
+        flex-direction: column-reverse;
+        // justify-content: flex-end;
+        overflow-y: scroll;
+        width: 100%;
+        height: 100vh;
+        // background: rgba(12,13,14,.4);
+        // background: linear-gradient(to top, #fff 75%, rgba(12,13,14,.4) 75%);
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        top:100%;
+        z-index: 100;
+        position: fixed;
+
+
+        .productItemContainer {
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            margin-top: 88px;
+
+            .productSpecImg {
+                width: 100%;
+                height: 258px;
+                // background: red;
+                // position: absolute;
+                // margin-top: 88px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .checkBox_Item {
+                width: 100%;
+                background: white;
+                position: relative !important;
+                padding: 0 19px 77px 19px;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0px 10px white;
+                padding-bottom: 82px;
+
+                cursor: context-menu;
+                .foodTitle {
+                    color: #000000;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+
+                .foodDescription {
+                    margin: 10px 0;
+                    color: #9299A8;
+                    font-size: 18px;
+                }
+
+                .foodPrice {
+                    color: #000000;
+                    font-size: 24px;
+                    font-weight: bolder;
+                    margin-bottom: 25px;
+                }
+
+                .chodeExtraAndpermissionCount {
+                    margin: 17px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .extraTitle {
+                        color: #000000;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                    .maxChoice {
+                        font-size: 14px;
+                        color: #000000;
+                    }
+                }
+
+                .extraNote {
+                    color: #000000;
+                    font-size: 18px;
+                    margin-bottom: 21px;
+                    font-weight: bold;
+                }
+
+                .extraNoteInput {
+                    width: 100%;
+                    height: 51px;
+                    padding-left: 11px;
+                    background: #F5F5F5;
+                    border: 1px solid #D8D8D8;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    color: #000000;
+                    align-self: flex-end;
+                }
+
+                .checkAddition {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-bottom: 37px;
+                    gap: 21px;
+                    .item_Additions {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 26px;
+
+                        .containerCheckBox {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            @include buttonBgBorderOutlineNone();
+                            cursor: pointer;
+
+                            .additionsName {
+                                color: #000000;
+                                font-size: 16px;
+                            }
+
+                            .checkbox {
+                                width: 20px;
+                                height: 20px;
+                                overflow: hidden;
+                                border-radius: 4px;
+                                border: 1px solid black;
+                                input {
+                                    display: none;
+                                }
+                                cursor: pointer;
+                            }
+
+                            .radio {
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 20px;
+                                border: 1px solid black;
+                                input {
+                                    display: none;
+                                }
+                                cursor: pointer;
+                            }
+
+                            .selectedradio {
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    width: 14px;
+                                    height: 14px;
+                                    background: black;
+                                    top: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    right: 0;
+                                    margin: auto;
+                                    border-radius: 20px;
+                                    transition: 1s;
+                                }
+                            }
+
+                            .selectedcheckbox {
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    width: 20px;
+                                    height: 25px;
+                                    background: black;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-image: url("../../cssImg/checkBox.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: auto;
+                                    transition: 1s;
+                                    top: -3px;
+                                    right: -1px;
+                                    // border-radius: 20px;
+                                }
+                            }
+                        }
+
+                        .containerPlusPinusAndPrice {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            .countPlusMinusContainer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 7px;
+                                button {
+                                    width: 26px;
+                                    height: 26px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 20px;
+                                    border: 1px solid #D8D8D8;
+                                    cursor: pointer;
+                                    line-height: 10px;
+                                    background: #ffffff69;
+                                    span {height: 7px;}
+                                        
+                                    
+                                }
+                            }
+
+                            .receptPrice {
+                                font-size: 14px;
+                                color: #000000;
+                                min-width: 40px;
+                            }
+                        }
+                    }
+
+
+                    .extraExtra {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 21px;
+                        .titleAndCountExtra {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            .extraTitle {
+                                color: #000000;
+                                font-size: 18px;
+                                font-weight: bold;
+                            }
+        
+                            .maxChoice {
+                                font-size: 14px;
+                                color: #000000;
+                            }
+                        }
+
+                        .item_Additions {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 26px;
+
+                        
+
+                        .containerCheckBox {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            @include buttonBgBorderOutlineNone();
+                            cursor: pointer;
+
+                            .additionsName {
+                                color: #000000;
+                                font-size: 16px;
+                            }
+
+                            .checkbox {
+                                width: 20px;
+                                height: 20px;
+                                overflow: hidden;
+                                border-radius: 4px;
+                                border: 1px solid black;
+                                input {
+                                    display: none;
+                                }
+                                cursor: pointer;
+                            }
+
+                            .radio {
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 20px;
+                                border: 1px solid black;
+                                input {
+                                    display: none;
+                                }
+                                cursor: pointer;
+                            }
+
+                            .selectedradio {
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    width: 14px;
+                                    height: 14px;
+                                    background: black;
+                                    top: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    right: 0;
+                                    margin: auto;
+                                    border-radius: 20px;
+                                    transition: 1s;
+                                }
+                            }
+
+                            .selectedcheckbox {
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    width: 20px;
+                                    height: 25px;
+                                    background: black;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-image: url("../../cssImg/checkBox.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: auto;
+                                    transition: 1s;
+                                    top: -3px;
+                                    right: -1px;
+                                    // border-radius: 20px;
+                                }
+                            }
+                        }
+
+                        .containerPlusPinusAndPrice {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            .countPlusMinusContainer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 7px;
+                                button {
+                                    width: 26px;
+                                    height: 26px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 20px;
+                                    border: 1px solid #D8D8D8;
+                                    cursor: pointer;
+                                    line-height: 10px;
+                                    background: #ffffff69;
+                                    span {height: 7px;}
+                                        
+                                    
+                                }
+                            }
+
+                            .receptPrice {
+                                font-size: 14px;
+                                color: #000000;
+                                min-width: 40px;
+                            }
+                        }
+                    }
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 22px;
+                    background: #FFFFFF;
+                    top: -20px;
+                    left: 0;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                }
+                
+            }
+
+        }
+
+        // @media screen and (min-width: 1280px) and (max-width: 1280px) {
+        //         background: red;
+        // }
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+
+    }
+}
+
+@keyframes basketButton {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width:60%;
+    }
+}
+
+@keyframes positionSpecialProduc {
+    0% {
+        position: absolute;
+    }
+    100% {
+        top: 0%;
+        position: absolute;
+        opacity: 1;
+
+    }
+}
+
+@keyframes positionSpecialProductoDown {
+    0% {
+        top: 0%;
+        position: absolute;
+    }
+    100% {
+        top: 300%;
+        position: unset;
+        display: none;
+    }
+}

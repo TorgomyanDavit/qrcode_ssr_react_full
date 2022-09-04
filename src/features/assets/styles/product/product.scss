@@ -1,0 +1,324 @@
+@import "../../../shares/constantsStyle/mixin.scss";
+@import "./specialProduct.scss";
+
+
+
+.productContainer {
+    position: relative;
+    height: 100vh;
+    // overflow: hidden;
+    
+
+    .productMenu {
+        z-index: 10;
+        background: white;
+        position: relative;
+        .menu_Search_Bar {
+            box-shadow: 0px 3px 6px #00000029;
+            padding: 8px 0 8px 0;
+            display: flex;
+            flex-direction: column;
+            row-gap: 18px;
+            .menubarAdded {
+                margin-top: 0px !important; 
+            }
+
+            .menuBar {
+                position: relative;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                transition: 0.3s;
+                .barAndTitle{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    // transition: 0.5s;
+                    .menuBarTitle {
+                        @include buttonBgBorderOutlineNone();
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: max-content;
+                        gap: 5px;
+                        font-size: 18px;
+                        font-weight: bold;
+                        margin-top: 10px;
+                        cursor: pointer;
+                        .imgTransform {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .PopUpKategory {
+                        display: flex;
+                        // width: max-content;
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: center;
+                        transition: 0.3s;
+                        .kategoryNameInitial {
+                            @include buttonBgBorderOutlineNone();
+                            font-size: 0;
+                            opacity: 0;
+                            color: #000000;
+                            cursor: pointer;
+                            animation-duration: 0.3s;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                }
+
+                .barAndTitleClose {
+                    height: 0;
+                    opacity: 0;
+                }
+
+                .searchIcon {
+                    @include buttonBgBorderOutlineNone();
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 19px;
+                    height: 19px;
+                    position: absolute;
+                    right: 15px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    transition: 0.3s;
+                    cursor: pointer;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    &:disabled{
+                        opacity: 0;
+                    }
+                    i {
+                        font-size: 20px
+                    }
+                }
+
+                .searchInput {
+                    @include buttonBgBorderOutlineNone();
+                    width: 100%;
+                    font-size: 0;
+                    padding: 0;
+                    opacity: 0;
+                    // transition: 0.5s;
+                }
+
+                .searchInputAnimate {
+                    opacity: 1;
+                    padding:  22px 20px 17px 20px;
+                    font-size: 16px;
+                }
+            }
+
+            .menuKategori {
+                width: 100%;
+                overflow-x: scroll;
+                display: flex;
+                gap: 20px;
+                padding-left: 17px;
+                transition: 0.5s;
+                .kategoriButton {
+                    @include buttonBgBorderOutlineNone();
+                    height: 30px;
+                    width: max-content;
+                    border-radius: 20px;
+                    color: #000000;
+                    font-size: 16px;
+                    cursor: pointer;
+                    // transition: 0.5s;
+                    padding: 5px 17px;
+                }
+
+                .selected {
+                    background: black;
+                    color: #FFFFFF;
+                }
+
+                .closemenuKategori  {
+                    opacity: 0;
+                    padding: 0;
+                    height: 0;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .display_None {
+                display: none;
+            }
+        }
+    }
+    .productContent {
+        height: 100vh;
+        overflow: hidden;
+        // background: blue;
+        .unableScroll {
+            overflow-y: hidden !important;
+        }
+        .product {
+            padding-top: 19px;
+            overflow-y: scroll;
+            height: calc(100vh - 120px);
+            padding-bottom: 50px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .kategori {
+                .kategoriTitle {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 55px;
+                    justify-content: center;
+                    padding-left: 20px;
+                    background: #F5F5F5;
+
+                    .kategoriName {
+                        font-size: 18px;
+                        color: #000000;
+                        font-weight: bold;
+                    }
+
+                    .kategoriActiveTime {
+                        font-size: 12px;
+                        color: #000000;
+                        margin-top: 4px;
+                    }
+                }
+
+                .productWrapper {
+                    // padding-bottom: 70px;
+                    .productItem {
+                        text-align: -webkit-auto;
+                        width: 100%;
+                        height: 126px;
+                        background: #FFFFFF;
+                        border: 1px solid #E6E6E6;
+                        padding: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        cursor: pointer;
+                        .Price_Name_Description {
+                            display: flex;
+                            flex-direction: column;
+                            .containerForNameAndquantity {
+                                display: flex;
+                                gap: 8px;
+                                .orderedCount {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    font-size: 14px;
+                                    color: #FFFFFF;
+                                    width: 35px;
+                                    height: 20px;
+                                    background: #000000;
+                                    border-radius: 12px;
+                                }
+                                .productName {
+                                    color: #000000;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                }
+                            }
+
+                            .productDescription {
+                                color: #9299A8;
+                                font-size: 12px;
+                                margin: 4px 0 9px 0;
+                                line-height: 16px;
+                                max-width: 172px;
+                                height: 30px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                -webkit-line-clamp: 2;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                            }
+                            .productPriceContainer {
+                                display: flex;
+                                gap: 5px;
+                                .productPrice {
+                                    color: #000000;
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                }
+
+                                .productPriceDiscount {
+                                    color: #959595;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration:line-through;
+                                }
+
+                                .colorRed {
+                                    color: red;
+                                }
+                            }
+                        }
+                        img {
+                            margin-right: 3px;
+                            border-radius: 7px;
+                            min-width: 93px;
+                            width: 93px;
+                            height: 84px;
+                            object-fit: cover;
+                        }
+                    }
+
+
+                }
+                
+            }
+        }
+    }
+
+    @include SpecialProductMain()
+}
+
+.backgroundShadow {
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(12,13,14,.4);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+@keyframes kategoryName {
+    0%{
+        opacity: 0;
+    }
+    35%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        font-size: 18px;
+    }
+}
+
+@keyframes initialAnimatekategoryName {
+    0%{
+        font-size: 18px;
+    }
+    100%{
+        opacity: 0;
+        font-size: 0;
+    }
+}

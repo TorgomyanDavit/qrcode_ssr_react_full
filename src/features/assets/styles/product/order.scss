@@ -1,0 +1,236 @@
+@import "../../../shares/constantsStyle/mixin.scss";
+@import "./specialProduct.scss";
+
+
+
+.order_Container {
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 88px;
+
+    .addDaskCountAndTittle {
+        display: flex;
+        position: sticky;
+        top: 0;
+        padding: 0 16px;
+        width: 100%;
+        height: 50px;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        .guestCountButtonDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100px;
+        }
+        button {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            border: 1px solid #D8D8D8;
+            cursor: pointer;
+            line-height: 10px;
+            background: #ffffff69;
+        }
+        .guestCount {
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+    .orderTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        box-shadow: 0px 9px 11px #00000015;
+        background: white;
+        padding: 0 20px;
+        // position: sticky;
+        // top: 0;
+        // padding: 0 16px;
+        span {
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+            background: white;
+        }
+
+        button {
+            @include buttonBgBorderOutlineNone();
+            font-size: 18px;
+            color: #EF0029;
+        }
+    }
+
+    .productItem {
+        text-align: -webkit-auto;
+        width: 100%;
+        min-height: 126px;
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        cursor: pointer;
+        .Price_Name_Description {
+            display: flex;
+            width: 100%;
+            margin-left: 10px;
+            flex-direction: column;
+            gap: 4px;
+            .orderReceptDescriptionWraper {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+           
+                .containerForNameAndquantity {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    .orderedCount {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 14px;
+                        color: #ff0000;
+                        width: 35px;
+                        height: 20px;
+                        border-radius: 12px;
+                    }
+                    .productName {
+                        color: #000000;
+                        font-size: 16px;
+                        font-weight: 700;
+                        .productName {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .productPrice {
+                    color: #000000;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+
+            .additionRecept {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                .containerForNameAndquantity {
+                    display: flex;
+                    gap: 8px;
+                    .orderedCount {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 10px;
+                        color: #000000;
+                        width: 35px;
+                        height: 20px;
+                        border-radius: 12px;
+                    }
+                    .productName {
+                        display: flex;
+                        align-items: center;
+                        color: #000000;
+                        
+                        span {
+                            font-size: 10px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                .productPrice {
+                    color: #000000;
+                    font-size: 14px;
+                }
+            }
+
+            .deleteItemButton {
+                display: flex;
+                justify-content: center;
+                width: 20px;
+                align-self: flex-end;
+            }
+        }
+
+        img {
+            margin-right: 3px;
+            border-radius: 7px;
+            min-width: 93px;
+            width: 93px;
+            height: 84px;
+            object-fit: cover;
+        }
+    }
+
+    .countedMount {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        margin-top: 56px;
+        padding-right: 11px;
+        .priceAndDiscount {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            span {
+                color:#000000;
+                font-size: 18px;
+            }
+        }
+        .Total {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            margin-top: 4px;
+            span{
+                font-size: 20px;
+                font-weight: bold;
+                color:#000000;
+            }
+        }
+    }
+
+    .makeOrder {
+        @include buttonBgBorderOutlineNone();
+        width: 100%;
+        height: 50px;
+        color: #FFFFFF;
+        position: fixed;
+        bottom: 10px;
+        padding: 0 19px;
+        span {
+            @include G_displayFlexAllCenter();
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            border-radius: 5px
+        }
+    }
+
+    @include SpecialProductMain();
+}
+
+.backgroundShadow {
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(12,13,14,.4);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+    }
+}

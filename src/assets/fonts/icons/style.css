@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?peerno');
+  src:  url('fonts/icomoon.eot?peerno#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?peerno') format('truetype'),
+    url('fonts/icomoon.woff?peerno') format('woff'),
+    url('fonts/icomoon.svg?peerno#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ic_minus:before {
+  content: "\e900";
+}
+.icon-ic_plus:before {
+  content: "\e901";
+}
+.icon-ic_close:before {
+  content: "\e902";
+}
+.icon-ic_search:before {
+  content: "\e903";
+}
+.icon-ic_arrowdown:before {
+  content: "\e904";
+}
+.icon-ic_delete:before {
+  content: "\e905";
+  color: #ef0029;
+}
+.icon-Ic_settings_48pxf:before {
+  content: "\e90a";
+  color: #8f93a4;
+}
+.icon-Polygon-1:before {
+  content: "\e90b";
+  color: #e6e6e6;
+}
+.icon-ic_back:before {
+  content: "\e90c";
+}
+.icon-Feather-arrows-arrow-up:before {
+  content: "\e906";
+}

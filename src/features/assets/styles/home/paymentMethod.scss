@@ -1,0 +1,27 @@
+.languangeContainer {
+    content: "";
+    padding: 0 29px 0 29px !important;
+    transition: 0.1s;
+
+    .langPopUP {
+        width: 100% !important;
+
+        .langTitle {
+            color: #000000;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .langButtonContainer {
+            button {
+                padding-left: 20px;
+                border-radius: 5px !important;
+                font-weight:300 !important;
+
+            }
+        }
+    }
+
+    .langPaymentPopUp {
+        height: 338px !important;
+    }
+}
