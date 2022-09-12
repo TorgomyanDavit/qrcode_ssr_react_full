@@ -1,14 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
+import { getHomeDetails } from "../../Api/Branch/getApi";
 import { fetchGaleryImg } from "../../Api/fetchGalleryData/fetchGaleryImg";
 import { homeScrollTop } from "./homeSlice";
 
+
+
 export function HookForApi() {
     const dispatch = useDispatch()
+    const {userToken} = useSelector((state) => state.globalSlice)
 
     useEffect(() => {
+        if(userToken) {dispatch(getHomeDetails())
+        } else {console.log("userToken is not defined")}
         dispatch(fetchGaleryImg())
-    },[])
+    },[userToken])
 }
 
 export function HookForGallerry() {

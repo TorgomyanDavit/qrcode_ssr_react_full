@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux"
 import { openSpecFood, selectMenu } from "../../../shares/globalSlice/globalSlice.js"
 
 
-
 export function HomeButton({state}) {
     const {index,val} = state
     const dispatch = useDispatch()

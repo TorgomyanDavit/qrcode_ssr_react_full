@@ -14,14 +14,9 @@ import * as Scroll from 'react-scroll';
 const scroll = Scroll.animateScroll;
 
 
-
-
-
-
-
 export default function Home() {
     const {
-        logoUrl,menyuName,homeImg,SliderKey,
+        logoUrl,menyuName,mainCover,SliderKey,qrBranchMenu,
         descriptionName,galleryName,homeScrollbutton
     } = useSelector((state) => state.home);
     const { StateMenu,orderOpenKey } = useSelector((state) => state.globalSlice);
@@ -34,7 +29,7 @@ export default function Home() {
         <main className={`mainHomeContainer ${classnameOverflowHiden(orderOpenKey)}`}>
             <Header/>
             <div className="homeImgContainer">
-                <img className="homeImg" src={homeImg} alt="homeImg" title="Restaurant"/>
+                <img className="homeImg" src={mainCover} alt="homeImg" title="Restaurant"/>
             </div>
             <div className="homeContentDiv">
                 <div className="contentLogo"><img src={logoUrl} alt="logo"/></div>
@@ -42,7 +37,7 @@ export default function Home() {
                     <span className="homeSectiontTitle">{menyuName}</span>
                     <DetailOrder/>
                     <div className="buttonContainer">
-                        {StateMenu.map((val,index) => {
+                        {qrBranchMenu.map((val,index) => {
                             return <HomeButton key={index} state={{val,index}}/>
                         })}
                     </div>

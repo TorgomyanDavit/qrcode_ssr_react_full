@@ -6,15 +6,19 @@ import { ROUTES } from './features/shares/constantsVariable/routes.js';
 import './index.scss';
 import Order from './features/pages/ProductPage/producOrderPage/Order';
 import Language from './features/shares/components/header/language/language';
+import { useEffect } from 'react';
+import { getQrToken } from './features/Api/User/getApi';
+import { useDispatch } from 'react-redux';
+
 
 
 
 
 
 function App() {
-
-
-  
+  const dispatch = useDispatch()
+  useEffect(() => {dispatch(getQrToken())},[])
+    
   return (
     <div className="App">
       <Switch>

@@ -11,6 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.21.1",
+    "dotenv": "^16.0.2",
     "express": "^4.17.1",
     "razzle-plugin-scss": "^4.2.17",
     "react": "^18.2.0",

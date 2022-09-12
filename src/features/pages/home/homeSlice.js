@@ -1,8 +1,46 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getHomeDetails } from '../../Api/Branch/getApi';
 import { fetchGaleryImg } from '../../Api/fetchGalleryData/fetchGaleryImg';
+import { getHomedetailLogic } from './asyncSliceLogic';
 import { splitImgToArray,openSliderLogic,closeGallerySliderLogic, openPaymentPopUpLogic, chengpaymenMethodLogic, openRaitPopUpLogic, rateRestourantLogic, homeScrollTopLogic } from './sliceLogic';
 
 const initialState = {
+  titleLogoUrl:"/images/home/logoTitle.png",
+  mainCover:"",
+  menyuName:"Our Menu",
+  logoUrl:"",
+  descriptionName:"",
+  descriptionContent:"",
+  qrBranchMenu:[
+    { id:`${Date.now()}${Math.random()}`, name:"Main Menu", selected:true },
+    { id:`${Date.now()}${Math.random()}`, name:"Alkohol Menu", selected:false }
+  ],
+  galeryState:[
+    // [
+    //   {url:"/images/home/img0.png"},
+    //   {url:"/images/home/img1.png"},
+    //   {url:"/images/home/img2.png"},
+    //   {url:"/images/home/img3.png"},
+    //   {url:"/images/home/img4.png"},
+    //   {url:"/images/home/img5.png"}
+    // ],
+    // [
+    //   {url:"/images/home/img0.png"},
+    //   {url:"/images/home/img1.png"},
+    //   {url:"/images/home/img2.png"},
+    //   {url:"/images/home/img3.png"},
+    //   {url:"/images/home/img4.png"},
+    //   {url:"/images/home/img5.png"}
+    // ]
+  ],
+  gallerySlider:[],
+  SliderKey:false,
+
+
+
+
+
+  // Api kcvac chi
   homeScrollbutton:false,
   notNowRateFeetback:"Not this time",
   placeholderRate:"Rate Review",
@@ -23,51 +61,13 @@ const initialState = {
   paymentTitle:"Choose payment method",
   paymentChooseButton:"Choose",
   paymentMethodKey:false,
-  galeryState:[
-    // [
-    //   {url:"/images/home/img0.png"},
-    //   {url:"/images/home/img1.png"},
-    //   {url:"/images/home/img2.png"},
-    //   {url:"/images/home/img3.png"},
-    //   {url:"/images/home/img4.png"},
-    //   {url:"/images/home/img5.png"}
-    // ],
-    // [
-    //   {url:"/images/home/img0.png"},
-    //   {url:"/images/home/img1.png"},
-    //   {url:"/images/home/img2.png"},
-    //   {url:"/images/home/img3.png"},
-    //   {url:"/images/home/img4.png"},
-    //   {url:"/images/home/img5.png"}
-    // ]
-  ],
-  SliderKey:false,
-  gallerySlider:[],
   payOnlineText:"Pay online",
   AskForBill:"Ask for bill",
   viewDetailButtonText:"view details",
   detailOrderTotalText:"Total:",
   orderItemText:"items ordered",
   shimmerLoading:true,
-  titleLogoUrl:"/images/home/logoTitle.png",
-  logoUrl:"/images/home/logo.png",
-  menyuName:"Our Menu",
-  homeImg:"/images/home/homeImg.png",
-  descriptionName:"About restaurant",
   galleryName:"Restaurant gallery",
-  descriptionContent:`Lorem ipsum dolor sit amet,
-  consectetur adipiscing elit,
-  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru
-  Lorem ipsum dolor sit amet,
-  consectetur adipiscing elit,
-  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-  `,
 };
 
 
@@ -92,10 +92,15 @@ export const homeSlice = createSlice({
       // state.shimmerLoading = true
     })
     .addCase(fetchGaleryImg.fulfilled,(state,action) => {
+      debugger
       state.shimmerLoading = false
       state.galeryState = splitImgToArray(action)
-      state.gallerySlider = action.payload.hits
+      // state.gallerySlider = action.payload.hits
     })
+    .addCase(getHomeDetails.pending,(state,action) => {
+      console.log("getHomeDetails"," -> pending");
+    })
+    .addCase(getHomeDetails.fulfilled,getHomedetailLogic)
   },
 });
 

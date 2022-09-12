@@ -1,6 +1,5 @@
 import { useSelector,useDispatch } from "react-redux";
 // import { ShimmerBadge,ShimmerTitle } from "shimmer-react";
-import { useRef, useEffect } from 'react';
 import { 
     GenerateAllCaseImg_index6_OR_toTasteImg_coun6,
     GenerateAllCaseWhenImg_index3And_Img_countNotEquaL6,

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getQrToken } from '../../Api/User/getApi';
 import { 
   addBasketLogic, changeSelectedKategoriLogic, checkSoucesLogic, chengLanguageLogic,closeOrderSliderLogic, createSliderPacketLogic, decreaseadditionsExtraLogic, decreaseCountAdditionsLogic, 
   decreaseOrderCountLogic, deleteItemFromBasketLogic, increaseadditionsExtraLogic, increaseCountAdditionsLogic, 
@@ -10,6 +11,7 @@ import {
 
 
 const initialState = {
+  userToken:undefined,
   languageData:[
     {id:`${Date.now()}${Math.random()}`,name:"English",imgUrl:"/images/home/englishlang.png",selected:true},
     {id:`${Date.now()}${Math.random()}`,name:"Русский",imgUrl:"/images/home/rusianLang.png",selected:false},
@@ -32,9 +34,9 @@ const initialState = {
   orderOpenKey:false,
   StateMenu:[
     {
-      id:`${Date.now()}${Math.random()}`,
-      name:"Main menu",
-      selected:true,
+      id:`${Date.now()}${Math.random()}`, // popoxvac e home Ejic 
+      name:"Main menu", // popoxvac e home Ejic 
+      selected:true, // popoxvac e home Ejic 
       kategoriMenu:[
         {
           id:`${Date.now()}${Math.random()}`,
@@ -1199,7 +1201,15 @@ export const globalSlice = createSlice({
 
 
   extraReducers: (builder) => {
-   
+    builder
+    .addCase(getQrToken.pending,(state,action) => {
+      console.log("getQrToken"," -> pending",action);
+    })
+    .addCase(getQrToken.fulfilled,(state,action) => {
+      console.log("getQrToken"," -> fulfiled",action);
+      localStorage.setItem("userToken",action.payload.data)
+      state.userToken = action.payload.data
+    })
   },
 });
 
